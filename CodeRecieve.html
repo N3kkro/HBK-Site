@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structure of HTML</title>
+    <link rel="stylesheet" href="styles/RecieveCode.css">
+</head>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="main_wrapper">
+            <div class="main_container">
+                <div class="card">
+                    <div class="goBack"><span> < </span></div>
+                    <div class="label_code">Введи полученный код который отправлен на </div>
+                    <div class="CodePaster">
+                        <div class="InputCode">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                            <input inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code">
+                        </div>
+                    </div>
+                    <div class="resend_block">
+                    <div class="timer">02:00</div>
+                    <div class="buttonResend">Отправить снова</div>
+                    </div>
+                    <button id="sendCode">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/forgotPassword/CodeRecieve.js"></script>
+</body>
+</html>

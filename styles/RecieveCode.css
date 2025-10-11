@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+}
+.main_wrapper{
+    background-color: beige;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_container{
+    width: 500px;
+    height: 350px;
+    border: 2px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    background-color: aliceblue;
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.goBack{
+    position: relative;
+    bottom: 0px;
+    left: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    cursor: pointer;
+}
+.label_code{
+    width: 450px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    left: 30px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InputCode{
+    width: 420px;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 37px;
+    
+}
+.InputCode input{
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    caret-color: transparent;
+    border-bottom: 2px solid black;
+    width: 30px;
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.timer{
+    position: relative;
+    top: 80px;
+    left: 230px;
+}
+.buttonResend{
+    position: relative;
+    top: 90px;
+    left: 190px;
+    display: flex;
+    color: gray;
+    cursor:pointer;
+}
+#sendCode{
+    background-color: rgb(44, 108, 44);
+    color: white;
+    position: relative;
+    top: 110px;
+    left: 145px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#sendCode:hover{
+    cursor: pointer;
+    background-color: rgb(41, 107, 41);
+}

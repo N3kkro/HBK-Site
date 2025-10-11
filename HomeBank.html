@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0" />
+    <title>Structure of HTML Document</title>
+    <link rel="stylesheet" href="styles/homebank.css">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+        <div class="header-container">
+            <p class="logo">homebank</p> 
+            <div class="header_rightSide">
+            <button>ВХОД</button>
+            <div class="languageOptions">
+            <button id="CurrentLanguage">РУС <p class="ArrowDown">˅</p></button>
+                <div id="options">
+                <ul class="ListOfLi">
+
+                    <li>КАЗ</li>
+                    
+                    <li>ENG</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+            <div class="main-container">
+                <h1>Вход</h1>
+                <h3>Выберите удобный способ авторизации</h3>
+                <div class="Box_SignIn">
+                    <div class="top_radioButtons">
+                            <label class="label_img">
+                                <input type="radio" name="color" value="loginWithNumber" class="EmailOption">
+                                Телефон 
+                            </label>
+                            <label class="label_img">
+                                <input type="radio" name="color" value="loginWithEmail" class="TelOption">
+                                Почта
+                            </label>
+                    </div>
+                    <div class="InputAccount">
+                        <div class="EmailOrTel">
+                        <p class="Email_label">Почта</p>
+                        <p class="Tel_label">Телефон</p>
+                        <label>
+                            <input type="email" class="emailInput">
+                        </label>
+                        <label>
+                            <input type="tel" class="telInput" placeholder="+7" style="display: none;">
+
+                        </label>
+                        </div>
+                        <div class="Password">
+                            <p>Пароль</p>
+                            <div class="eye_container">
+                            <input type="password" class="passwordInput">
+                            
+                            <img src="img/show.png" alt="eye" class="eye">
+                            <img src="img/hide.png" alt="hide eye" class="hideeye">
+                            </div>
+                        </div>
+                    </div>
+                    <p style="color: red;" id="InvalidAlert">Неправильно введенно почта или пароль</p>
+                    
+                    <div class="Submit">
+                        <button type="button" id="SubmitButton">Submit</button>
+                        <div class="Help_Submit">
+                            <p><a href="ForgetPassword.html">Забыл пароль</a></p>
+                            <p><a href="">Нет аккаунта?</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div>FAQ</div>
+            
+        </div>
+    </footer>
+    <script src="js/homebank/ShowPassword.js"></script>
+    <script src="js/homebank/EmailOrTel.js"></script>
+    <script src="js/homebank/ValidCheck.js"></script>
+    <script src="js/homebank/LanguageShow.js"></script>
+</body>
+</html>

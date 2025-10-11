@@ -1,0 +1,552 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+.container{
+    width: 1500px;      /* фиксированная ширина контента */
+    max-width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 200;
+}
+header .container_header{
+    width: 1500px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.MainIcon{
+    width: 50px;
+    height: 50px;
+    
+}
+.Right_Block{
+    position: relative;
+    left: 80px;
+    width: 65vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.Up_sideHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upside_ul{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    list-style-type: none;
+}
+.downside_ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+}
+.Right_Block_Actions{
+    position: relative;
+    top: -20px;
+    left: -90px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.Language{
+    position:relative;
+    right: 100px;
+    top: -15px;
+    display: inline-block;
+    list-style: none;
+}
+.language{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(210, 210, 210);
+    width: 60px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.Search_header{
+    position: relative;
+    right:150px;
+    top: -35px;
+}
+.Search_header img{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    
+}
+.upside_maps, .downside_maps{
+    position: relative;
+    padding: 5px 5px;
+}
+.upside_maps::after, .downside_maps::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: green;
+    width: 0%;
+    transition: width 0.3s ease-in-out
+}
+.upside_maps:hover::after, .downside_maps:hover::after{
+    width: 100%;
+}
+.modal_changeLang .changeLang{
+    display: flex;
+    justify-content: center;
+}
+.modal_changeLang{
+    width: 55px;
+    position: absolute;
+    display: none;
+    right: 5px;
+}
+.modal_changeLang.active{
+    display: block;
+
+    border-radius:5px;
+    background-color: rgb(210, 210, 210);
+}
+/**/
+.slider_wrapper{
+    width:1460px;
+    overflow: hidden;    
+}
+.Slider{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    width: calc(1460px*4);
+    height: 250px;
+    overflow: hidden;
+}
+.slide{
+    width: 1460px;
+    height: 40vh;
+    background-color: white;
+    display: none;
+}
+.slide.active{
+    display: block;
+}
+.arrow{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:250px;
+    border: 1px white solid;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.arrow.left{left: 10px;}
+.arrow.right{right: 10px;}
+.Auth_Block{
+    width: 7vw;
+    display: flex;
+    justify-content: space-between;
+}
+.Signin{
+    width: 40px;
+    height:10px;
+    background-color: #78d78c;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    right: 90px;
+    top: -5px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.Signin a{
+       text-decoration: none;
+    color:#227114;
+}
+
+.currency_wrapper{
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.Block_currency{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 250px;
+    border: 0.5px black solid;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.euro_currency,
+.usd_currency,
+.ru_currency{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.fullSize_currency{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.upside_currency{
+    width: 75%;
+    display: flex;
+    
+    padding-right: 30px;
+    justify-content: space-between;
+    align-items: start;
+}
+.Price_Date{
+    padding-bottom: 25px;
+    width: 1120px;
+    height: 50px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.Price_Date p{
+    color: grey;
+    
+}
+.Price_Date .AllRates{
+    font-size: 20px;
+}
+.Price_block{
+    margin-left: 50px;
+    display: flex;
+    width: 1400px;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    padding-right: 50px;
+    align-items: center;
+}
+.rus_flag{
+    width: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.usa_flag{
+    width: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.euro_flag{
+    width: 20px;
+    border: none;
+    border-radius: 5px;
+}
+/*Actual blocks*/
+.Actual_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Actual_box{
+    width: 1200px;
+    height: auto;
+    
+}
+.Actual_label{
+    font-size: 30px;
+    display: flex;
+    
+}
+.actual_blocks{
+    display: flex;
+    justify-content: center;
+}
+/*center area of actual blocks(cards)*/
+.actual_block_area{
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+}
+.actual_block{
+    width: 585px;
+    height: 250px;
+    display: flex;
+    border: 2px black solid;
+    border-radius: 20px;
+}
+.actual_block_description li{
+    list-style-type: none ;
+}
+.actual_block_TextSize{
+    width: 50px;
+    height: 50px;
+}
+.Text_block{
+    font-size: clamp(25px, 2vw+1rem, 32px);
+}
+.actualBlock_btn{
+    margin-top: 50px;
+    margin-left:5px;
+}
+.left-side{
+    flex: 1;
+}
+.right-side{
+    justify-content: flex-end;
+    align-items: center;
+}
+/*Search*/
+.Search_block{
+    
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Search_area{
+    width: 1200px;
+    height: 200px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 1px rgba(181, 174, 174, 0.916) solid;
+    flex-direction: column;
+}
+.search_bar{
+    position: relative;
+    width:70%;
+    height: 35px;
+    border: 2px black solid;
+    background-color: rgb(234, 227, 227);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    border-radius:10px;
+    transition: border 0.9 ease-in-out;
+}
+#search_right img{
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+.Search_Label{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+#search_left{
+   
+    flex: 1;
+}
+#search_left input{
+    outline: none;
+    width: 47vw;
+    height: 32px;
+     border: none;
+     background: transparent;
+}
+.search_bar:focus-within {
+  border: 1px solid #1bd543;
+  border-radius: 10px; 
+}
+#search_left label{
+    position: absolute;
+    color: rgb(170, 169, 169);
+    left: 45px;
+    top: 7px;
+    pointer-events: none;
+    display: none;
+}
+#search_left:focus-within label{
+    display: block;
+}
+#search_left input:not(:placeholder-shown) + label{
+    display: none;
+}
+/*Offer blocks*/
+.Offers_Block{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Offers_area{
+    width: 900px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.List_Offers{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.items{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    border: 0.5px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.items button{
+    position: absolute;
+    bottom: 20px;
+    width: 220px;
+    height: 30px;
+    color:#227114;
+    background-color: #78d78c;
+    border: none;
+    border-radius: 5px;
+}
+.items p{
+    position: absolute;
+    bottom: 105px;
+}
+.items img {
+    width: 300px;
+    height:150px;
+    position: absolute;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px ;
+    
+}
+.items_info{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    bottom: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+/*footer*/
+footer{
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    background-color: wheat;
+}
+.footer_container{
+    width: 500px;
+    height: 200px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+.right_footer{
+    margin-top: 30px;
+    width: 400px;
+    height: 300px;
+     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.left_footer{
+    margin-top: 30px;
+    gap: 20px;
+}
+.left_footer .icons img{
+    transition: all 0.3 ease-in-out;
+    cursor: pointer;
+}
+.left_footer .icons img:hover{
+    filter: brightness(1.2);
+        
+}
+.right_top_footer{
+    display: flex;
+    gap: 20px;
+}
+.Contacts_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 200px;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+}
+.call-center{
+    display: flex;
+    gap: 20px;
+}
+.fa-facebook:hover{
+    color: blue;
+}
+.fa-instagram:hover{
+    color: pink;
+}
+.fa-telegram:hover{
+    color:cornflowerblue;
+}
+.fa-tiktok:hover{
+    color:rgba(59, 58, 58, 0.468)
+}

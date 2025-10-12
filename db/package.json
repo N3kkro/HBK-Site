@@ -1,14 +1,19 @@
 {
+  "type": "module",
   "name": "db",
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "checkUser": "node checkAuthorization.js",
+    "getNewUser": "node registerNewUser.js",
+    "serverRun": "node server.js"
+    
   },
   "author": "NN3kro",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }

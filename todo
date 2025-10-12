@@ -1,7 +1,7 @@
 -03
 - make the full home page then design it and do the translation function
 - make a traslation pages or functions(way of change the language in full page)
-- make the animation error for sign in, forgot password, sign up(process...)
+- make the animation error for sign in, forgot password, sign up(completed)
 - make the database for account and integrate it in the front-end (maybe CRUD)
 - add icons, add colors, do responsive design for every pages
 - do the forgot password page with email then after success email, make the (send,recieve,submit and then load another screen with changing password).

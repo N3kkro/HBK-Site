@@ -15,12 +15,16 @@ router.post("/login", async (req, res) =>{
             "SELECT * FROM users WHERE email = $1 AND password = $2",
             [email, password]
         );
-        if(result.rows.length > 0){
-            if(result.email.contains("@") && result.password > 2 )
-            return res.status(200).json({success: true, message: "Succesful login"});
-            
-        }
-            return res.status(401).json({success: true, meesage: "Invalid email or password"});
+            if(result.rows.length > 0){
+                const user = result.rows[0];
+                if(user.email?.includes("@") && user.password.length > 2 ){
+                return res.status(200).json({success: true, message: "Succesful login"});
+                
+            }
+            }
+            return res.status(401).json({success: false, meesage: "Invalid email or password"});
+        
+    
         
     }catch(err){
         console.error("Database error", err);

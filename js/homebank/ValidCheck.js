@@ -14,22 +14,20 @@ let validPass = false;
         invalidText.textContent = "Пожалуйста выберите метод авторизации!";
         return;
     }else{
-        invalidText.style.display = "none";
-    }
 //NOTE: I have login with email and now create another api with numbers
     if(selectedRadio.value === "loginWithEmail"){
         try{
-        const responce = fetch("http://localhost:3000/login", {
+        const response = await fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                email: EmailInput,
-                password: passwordInput
+                "email": EmailInput.value,
+                "password": passwordInput.value
             }),
         });
-        const data = await responce.json();
-        console.log("Responce", data);
-    if(responce.ok && data.success){
+        const data = await response.json();
+        console.log("Response", data);
+    if(data.success){
         validPass = true;
         EmailInput.classList.remove("error");
         invalidText.style.display = "none";
@@ -58,6 +56,5 @@ let validPass = false;
         invalidText.textContent = "Неверный номер или пароль";
         }
     }
-});
-
+}});
 

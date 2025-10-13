@@ -8,11 +8,11 @@
     "checkUser": "node checkAuthorization.js",
     "getNewUser": "node registerNewUser.js",
     "serverRun": "node server.js"
-    
   },
   "author": "NN3kro",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "pg": "^8.16.3"
   }

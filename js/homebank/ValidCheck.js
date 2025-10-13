@@ -5,11 +5,7 @@ const invalidText = document.getElementById("InvalidAlert");
 const submitBtn = document.getElementById("SubmitButton");
 const Radio = document.querySelectorAll('input[name="color"]');
 let validPass = false;
-
-    submitBtn.addEventListener("click", ()=>{
-        console.log("work");
-    })
-    submitBtn.addEventListener("click", (event)=>{
+    submitBtn.addEventListener("click", async (event)=>{
     event.preventDefault(); 
     
     const selectedRadio = document.querySelector('input[name="color"]:checked'); 
@@ -20,25 +16,41 @@ let validPass = false;
     }else{
         invalidText.style.display = "none";
     }
-
+//NOTE: I have login with email and now create another api with numbers
     if(selectedRadio.value === "loginWithEmail"){
-    if(EmailInput.value.includes("@") && EmailInput.value !== ""){
+        try{
+        const responce = fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                email: EmailInput,
+                password: passwordInput
+            }),
+        });
+        const data = await responce.json();
+        console.log("Responce", data);
+    if(responce.ok && data.success){
+        validPass = true;
+        EmailInput.classList.remove("error");
+        invalidText.style.display = "none";
+        window.location.href = "CodeRecieve.html";
+    }else{
+        EmailInput.classList.add("error");
+        invalidText.textContent = "Неверный почта или пароль";
+        invalidText.style.display = "flex";
+    }}catch(err){
+        console.error("Error", err);
+    }
+
+}else if(selectedRadio.value === "loginWithNumber"){
+    const phoneRegex = /^\+7\d{10}$/;    
+    if(phoneRegex.test(TelInput.value) && passwordInput.value.length > 2){
+          
         validPass = true;
         EmailInput.classList.remove("error");
         invalidText.style.display = "none";
         console.log("valid");
-    }else{
-        console.log("invalid");
-        EmailInput.classList.add("error");
-        invalidText.textContent = "Неверный почта или пароль";
-        invalidText.style.display = "flex";
-    }
-}else if(selectedRadio.value === "loginWithNumber"){
-    const phoneRegex = /^\+7\d{10}$/;    
-    if(phoneRegex.test(TelInput.value)){
-            validPass = true;
-            invalidText.style.display = "none";
-            TelInput.classList.remove("error");
+        window.location.href = "CodeRecieve.html";
         }else{
         console.log("invalid");
         invalidText.style.display = "flex";
@@ -46,11 +58,6 @@ let validPass = false;
         invalidText.textContent = "Неверный номер или пароль";
         }
     }
-    if(passwordInput.value.length > 2){
-        validPass = true;
-        passwordInput.classList.remove("error");
-    }else{
-        passwordInput.classList.add("error");
-    }
 });
+
 

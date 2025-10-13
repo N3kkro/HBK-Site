@@ -2,11 +2,10 @@ const radio = document.querySelectorAll('input[name="color"]');
 const email = document.querySelector(".Email_label");
 const Tel = document.querySelector(".Tel_label");
 let telInput = document.querySelector(".telInput");
-
 let emailInput = document.querySelector(".emailInput");
 Tel.style.display = "none";
 radio.forEach((r)=>{
-    r.addEventListener("change", () =>{
+    r.addEventListener("change", ()  =>{
         if(r.value === "loginWithNumber" && r.checked){
             Tel.style.display = "block";
             email.style.display = "none";

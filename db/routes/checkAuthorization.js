@@ -8,7 +8,7 @@ router.post("/login", async (req, res) =>{
     const {email, password} = req.body;
     
     if(!email || !password){
-        return res.status(400).send("email or password is missing");
+        return res.status(400).json({success: false, message: "email or password is missing"});
     }
     try{
         const result = await pool.query(
@@ -16,13 +16,15 @@ router.post("/login", async (req, res) =>{
             [email, password]
         );
         if(result.rows.length > 0){
-            return res.status(200).send("Succesful login");
-        }else{
-            return res.status(401).send("Invalid email or password");
+            if(result.email.contains("@") && result.password > 2 )
+            return res.status(200).json({success: true, message: "Succesful login"});
+            
         }
+            return res.status(401).json({success: true, meesage: "Invalid email or password"});
+        
     }catch(err){
         console.error("Database error", err);
-        res.status(500).send("Server error");
+        res.status(500).json({success: false, message:"Server error"});
     }
 });
 export default router;

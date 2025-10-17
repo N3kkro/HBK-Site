@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <header>
@@ -30,7 +30,10 @@
                     <li class="downside_maps">Market</li>
                     <li class="downside_maps">Акции</li>
                     <li class="downside_maps">Другое</li>
-                    <li class="downside_maps">Поиск</li>
+                    <li class="downside_maps" 
+                    style="cursor: pointer; color: black;">
+                    <a href="Search.html">Поиск</a>
+                </li>
                 </ul>
             </div>
         </div>
@@ -38,7 +41,11 @@
         <div class="Search_header">
             <img src="img/search_button.png" alt="">
         </div>
-        
+        <div class="Search_modal">
+        <p>Поиск</p>
+        <input type="text" class="Search_buttonChecked"
+            >
+        </div>
         <div class="Language">
             <li class="language">Рус <span class="arrow_down"> ˅</span></li><!--˄-->
                 <div class="modal_changeLang">
@@ -50,9 +57,9 @@
         </div>
     </div>
     </header>
+    
     <div class="wrapper"> 
     <div class="container">
-
     <main>
         <div class="slider_wrapper">
         <div class="Slider">
@@ -103,7 +110,7 @@
             </div>
             </div>
             <div class="Price_Date"><p>current changes</p><p class="AllRates">
-                <a href="" style="text-decoration: none; color: green;">All rates˃</a>
+                <a href="" style="text-decoration: none; color: green;">All rates ˃</a>
             </p></div>
         </div>
         </div>

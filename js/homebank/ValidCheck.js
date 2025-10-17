@@ -17,7 +17,7 @@ let validPass = false;
 //NOTE: I have login with email and now create another api with numbers
     if(selectedRadio.value === "loginWithEmail"){
         try{
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch("http://localhost:3000/loginWithEmail", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -26,7 +26,6 @@ let validPass = false;
             }),
         });
         const data = await response.json();
-        console.log("Response", data);
     if(data.success){
         validPass = true;
         EmailInput.classList.remove("error");
@@ -41,9 +40,30 @@ let validPass = false;
     }
 
 }else if(selectedRadio.value === "loginWithNumber"){
-    const phoneRegex = /^\+7\d{10}$/;    
-    if(phoneRegex.test(TelInput.value) && passwordInput.value.length > 2){
-          
+    const phoneRegex = /^\+7\d{10}$/;
+    if(!phoneRegex.test(TelInput.value) || passwordInput.value.lenght < 2){
+        invalidText.textContent = "Неверный формат, нужно такой: +7xxxxxxxxxx "
+        invalidText.style.display = "flex";
+       TelInput.classList.add("error");
+       passwordInput.classList.add("error");
+       return;
+    }else{
+        invalidText.display = "none";
+        TelInput.classList.remove("error");
+        passwordInput.classList.remove("error");
+    }
+    try{
+    const responce = await fetch("http://localhost:3000/loginWithPhoneNumber",{
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            "phonenumber": TelInput,
+            "password": passwordInput
+        })
+    });
+    const data = await responce.json();
+    
+    if(data.success){
         validPass = true;
         EmailInput.classList.remove("error");
         invalidText.style.display = "none";
@@ -55,6 +75,9 @@ let validPass = false;
         TelInput.classList.add("error");
         invalidText.textContent = "Неверный номер или пароль";
         }
+    }catch(e){
+        console.error("Error", e);
     }
+}
 }});
 

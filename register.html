@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content=
-        "width=device-width, initial-scale=1.0" />
-    <title>Structure of HTML Document</title>
-    <link rel="stylesheet" href="styles/homebank.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
     <header>
@@ -29,7 +26,7 @@
         </div>
         </div>
     </header>
-    <main>
+        <main>
         <div class="main-wrapper">
             <div class="main-container">
                 <h1>Вход</h1>
@@ -44,6 +41,15 @@
                                 <input type="radio" name="color" value="loginWithEmail" class="TelOption">
                                 Почта
                             </label>
+                    </div>
+                    <div class="Input_UserName">
+                        <div class="Password_label">
+                            <p>Имя пользователя </p>
+                            <label>
+                                <input type="text" class="nameInput">
+                            </label>
+                        </div>
+
                     </div>
                     <div class="InputAccount">
                         <div class="EmailOrTel">
@@ -67,28 +73,23 @@
                             </div>
                         </div>
                     </div>
-                    <p style="color: red;" id="InvalidAlert">Неправильно введенно почта или пароль</p>
-                    
+                    <div id="InvalidAlert">
+                    <p style="color: red;">Неправильно введенно почта или пароль</p>
+                    </div>
                     <div class="Submit">
                         <button type="button" id="SubmitButton">Submit</button>
                         <div class="Help_Submit">
-                            <p><a href="ForgetPassword.html">Забыл пароль</a></p>
-                            <p><a href="register.html">Нет аккаунта?</a></p>
+                            
+                            <p><a href="HomeBank.html">У меня есть аккаунт</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer_container">
-            <div>FAQ</div>
-            
-        </div>
-    </footer>
     <script src="js/homebank/ShowPassword.js"></script>
     <script src="js/homebank/EmailOrTel.js"></script>
-    <script src="js/homebank/ValidCheck.js"></script>
     <script src="js/homebank/LanguageShow.js"></script>
+    <script src="js/register/registerValidation.js"></script>
 </body>
 </html>

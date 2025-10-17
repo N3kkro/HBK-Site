@@ -4,6 +4,7 @@ const Tel = document.querySelector(".Tel_label");
 let telInput = document.querySelector(".telInput");
 let emailInput = document.querySelector(".emailInput");
 Tel.style.display = "none";
+//Radio options login
 radio.forEach((r)=>{
     r.addEventListener("change", ()  =>{
         if(r.value === "loginWithNumber" && r.checked){

@@ -2,6 +2,7 @@ import express, { response } from "express";
 import { pool } from "../pg_db/pool.js";
 import supabase from "../server.js";
 import { SendingSMS } from "./SMS.js";
+import { SendEmail } from "./NodeEmailer.js";
 const router = express.Router();
 
 router.post("/registerWithEmail", async (req, res) =>{
@@ -32,7 +33,11 @@ router.post("/registerWithEmail", async (req, res) =>{
             console.error(error);
             return res.status(401).json({message: "Invalid inserting", error});
         }
-        res.status(201).json({success: true, message: "Register is succesfully completed", data});
+        const Code = Math.floor(100000 + Math.random() * 900000);
+        SendEmail(email,Code);
+        //send to verifications table where we will check the valid code
+        await supabase.from("verifications").upsert([{"email": email, "code": Code, created_at: new Date()}]).select();
+        return res.status(201).json({success: true, message: "Register is succesfully completed", data});
     }catch(err){
         console.error(err);
         res.status(500).json({message: "Server error", err});

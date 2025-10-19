@@ -6,3 +6,9 @@
 - add icons, add colors, do responsive design for every pages
 - do the forgot password page with email then after success email, make the (send,recieve,submit and then load another screen with changing password).
 - make the sitemap
+
+
+
+20/10/25 
+- make a strict if the user with the same email is verified(true) and then integrate it to front-end.
+- and make to phone number sign in 
